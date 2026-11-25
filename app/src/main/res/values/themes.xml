@@ -1,0 +1,7 @@
+<resources>
+    <!-- 창 배경은 Compose 테마가 그린다. 시작 직후 깜빡임을 줄이기 위해 라이트 테마 바탕색만 지정 -->
+    <style name="Theme.DragonDiary" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/launch_background</item>
+    </style>
+    <color name="launch_background">#FFF9EF</color>
+</resources>
