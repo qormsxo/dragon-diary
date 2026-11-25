@@ -1,0 +1,27 @@
+# Gradle / 빌드 산출물
+.gradle/
+.kotlin/
+build/
+**/build/
+captures/
+*.apk
+*.aab
+
+# 로컬 환경
+local.properties
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# 서명 키
+*.jks
+*.keystore
+
+# 문서 (추적 안 함)
+docs/
+*.md
+
+# 디자인 원본 압축본 / 에셋 원본
+*.zip
+asset/
