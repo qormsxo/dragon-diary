@@ -249,7 +249,7 @@ private fun NavItem(icon: ImageVector, label: String, selected: Boolean, onClick
   }
 }
 
-/** 상단바 브랜드 묶음: 로고 + '별밤용 일기' + 보조 표기 */
+/** 상단바 브랜드 묶음: 로고 + '용담' + 보조 표기 */
 @Composable
 fun BrandTitle(subtitle: @Composable () -> Unit) {
   Row(verticalAlignment = Alignment.CenterVertically) {

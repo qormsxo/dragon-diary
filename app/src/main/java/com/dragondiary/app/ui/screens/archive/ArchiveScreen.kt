@@ -111,7 +111,7 @@ fun ArchiveScreen(entries: List<DiaryEntry>, actions: ArchiveActions, contentPad
     TopBarFrame(height = 56) {
       Icon(Icons.Outlined.AutoStories, null, Modifier.size(20.dp), tint = if (c.isDark) c.gold else c.primary)
       Spacer(Modifier.width(8.dp))
-      Text("별밤용 일기", style = t.titleLg.copy(fontSize = 17.sp), color = c.primary, fontWeight = FontWeight.Bold)
+      Text("용담", style = t.titleLg.copy(fontSize = 17.sp), color = c.primary, fontWeight = FontWeight.Bold)
       Text("  |  ", style = t.labelMd, color = c.outlineVariant)
       Text("기록 보관소", style = t.bodySm.copy(fontSize = 13.sp), color = c.onSurfaceVariant, fontWeight = FontWeight.SemiBold)
       Spacer(Modifier.width(4.dp))

@@ -155,7 +155,7 @@ private fun NightHome(s: HomeState, actions: HomeActions, cal: CalendarActions, 
       BrandMark()
       Spacer(Modifier.width(8.dp))
       Column(Modifier.weight(1f)) {
-        Text("별밤용 일기", style = t.headlineSm, color = c.primary, fontWeight = FontWeight.Bold)
+        Text("용담", style = t.headlineSm, color = c.primary, fontWeight = FontWeight.Bold)
         Row(verticalAlignment = Alignment.CenterVertically) {
           Box(Modifier.size(6.dp).alpha(pulse()).clip(CircleShape).background(c.gold))
           Spacer(Modifier.width(4.dp))
@@ -336,7 +336,7 @@ private fun StorybookHome(s: HomeState, actions: HomeActions, cal: CalendarActio
     TopBarFrame(height = 56) {
       BrandMark()
       Spacer(Modifier.width(8.dp))
-      Text("별밤용 일기", style = t.headlineMd.copy(fontSize = 20.sp), color = c.ink, fontWeight = FontWeight.Bold)
+      Text("용담", style = t.headlineMd.copy(fontSize = 20.sp), color = c.ink, fontWeight = FontWeight.Bold)
       Spacer(Modifier.width(6.dp))
       Text("✦", style = t.labelMd, color = c.outlineVariant.copy(alpha = 0.6f))
       Spacer(Modifier.width(6.dp))

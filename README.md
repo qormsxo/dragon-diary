@@ -1,4 +1,4 @@
-# 별밤용 일기 (Dragon Diary)
+# 용담 (Dragon Diary)
 
 하루의 기분과 짧은 메모를 남기면, 작은 드래곤과 함께 동화 한 편으로 엮어 주는 일기 앱입니다.
 Stitch로 만든 디자인 시안을 Jetpack Compose로 옮긴 안드로이드 앱입니다. WebView 없이 모두 네이티브로 그립니다.

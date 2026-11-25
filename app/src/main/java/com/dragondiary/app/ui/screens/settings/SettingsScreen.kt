@@ -110,7 +110,7 @@ fun SettingsScreen(
     TopBarFrame {
       BrandMark()
       Spacer(Modifier.width(8.dp))
-      Text("별밤용 일기", style = t.headlineMd.copy(fontSize = 20.sp), color = c.primary)
+      Text("용담", style = t.headlineMd.copy(fontSize = 20.sp), color = c.primary)
       Text("  |  ", style = t.bodySm, color = c.outlineVariant)
       Text("설정", style = t.labelLg, color = c.onSurface)
       Spacer(Modifier.width(4.dp))
@@ -137,7 +137,7 @@ fun SettingsScreen(
       DataCard()
       AboutCard()
       Text(
-        "별밤용 일기와 함께 오늘 하루도 포근히 안식하기를.",
+        "용담과 함께 오늘 하루도 포근히 안식하기를.",
         style = t.labelSm,
         color = c.outline,
         textAlign = TextAlign.Center,
