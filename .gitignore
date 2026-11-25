@@ -21,6 +21,7 @@ Thumbs.db
 # 문서 (추적 안 함)
 docs/
 *.md
+!README.md
 
 # 디자인 원본 압축본 / 에셋 원본
 *.zip
