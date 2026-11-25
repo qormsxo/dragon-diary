@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#1d1b16",
+            "on-secondary-container": "#5d517f",
+            "primary-container": "#e5a93c",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#dfd9d1",
+            "primary": "#7e5700",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#1f133f",
+            "on-tertiary-fixed": "#351000",
+            "on-primary-fixed-variant": "#604100",
+            "outline": "#827563",
+            "surface-tint": "#7e5700",
+            "secondary": "#645786",
+            "tertiary-fixed": "#ffdbcc",
+            "on-primary-container": "#5e4000",
+            "tertiary-container": "#f0a07b",
+            "surface-variant": "#e7e2d9",
+            "primary-fixed": "#ffdead",
+            "surface-container-low": "#f9f3ea",
+            "inverse-primary": "#fabc4d",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#f6f0e7",
+            "primary-fixed-dim": "#fabc4d",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#32302a",
+            "tertiary": "#8d4e2e",
+            "surface": "#fff9ef",
+            "secondary-container": "#d6c7fd",
+            "error": "#ba1a1a",
+            "surface-container": "#f3ede4",
+            "secondary-fixed-dim": "#cebef5",
+            "surface-bright": "#fff9ef",
+            "on-secondary-fixed-variant": "#4b406d",
+            "on-tertiary-container": "#6e3618",
+            "surface-container-highest": "#e7e2d9",
+            "on-primary-fixed": "#281900",
+            "on-tertiary-fixed-variant": "#703719",
+            "outline-variant": "#d4c4b0",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#e8ddff",
+            "background": "#fff9ef",
+            "tertiary-fixed-dim": "#ffb694",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#ede7de",
+            "on-surface": "#1d1b16",
+            "on-surface-variant": "#504535"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.25rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "display-lg": ["Literata", "serif"],
+            "headline-lg": ["Literata", "serif"],
+            "headline-md": ["Literata", "serif"],
+            "title-lg": ["Literata", "serif"],
+            "title-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background-color: #fff9ef;
+      }
+      body {
+        overscroll-behavior-y: none;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 16px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .parchment-border {
+      box-shadow: 0 0 0 1px rgba(212, 196, 176, 0.45), 0 8px 24px -4px rgba(126, 87, 0, 0.06);
+    }
+    .gold-foil {
+      border: 1px solid rgba(229, 169, 60, 0.35);
+      background: linear-gradient(135deg, #fffdfa 0%, #fbf5ea 100%);
+    }
+    .amber-glow {
+      box-shadow: 0 4px 20px -2px rgba(229, 169, 60, 0.38);
+    }
+  </style>
+</head>
+<body class="bg-[#FFF9EF] font-body-md text-on-surface antialiased flex flex-col selection:bg-primary-container/30 selection:text-primary">
+<!-- Header: Antique Parchment Top Navigation -->
+<header class="fixed top-0 inset-x-0 z-50 bg-[#FFF9EF]/90 backdrop-blur-md pt-safe border-b border-[#E7E2D9]/70">
+<div class="h-16 px-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button aria-label="뒤로 가기" class="w-10 h-10 -ml-1 rounded-full flex items-center justify-center text-primary hover:bg-[#F3EDE4] transition-colors" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-[20px] font-semibold tracking-tight text-[#281900] flex items-center gap-1.5">
+<span class="font-['Literata']">별밤 일기장</span>
+<span class="text-[13px] font-normal text-secondary font-['Plus_Jakarta_Sans']">Grimoire</span>
+</h1>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full border border-primary-container/40 bg-surface-container-low flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Container -->
+<main class="flex flex-col relative w-full px-4 pt-20 pb-safe bg-[#FFF9EF] flex-1 max-w-md mx-auto">
+<div class="flex flex-col w-full pb-8 space-y-4">
+<!-- Top Storybook Greeting Banner -->
+<div class="relative overflow-hidden rounded-xl gold-foil parchment-border p-4.5 p-4 shadow-sm">
+<div class="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-primary-container/15 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-6 -bottom-6 w-24 h-24 rounded-full bg-secondary-container/30 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1.5 font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">hotel_class</span>
+              2025년 5월 14일 수요일 밤
+            </span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-secondary border border-secondary/20 font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+              간편 기록 모드
+            </span>
+</div>
+<div class="pt-0.5 flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-[#FAF3E3] border border-primary-container/50 flex-shrink-0 flex items-center justify-center shadow-[0_2px_10px_rgba(229,169,60,0.18)]">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<div class="flex flex-col">
+<p class="font-headline-md text-[18px] text-[#281900] font-semibold leading-tight font-['Literata']">오늘 밤, 어떤 기억을 수놓을까요?</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+                마음에 드는 빛깔과 조각을 톡톡 얹으면, 아기 별지기 용이 따스한 동화로 빚어드려요 ✨
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mood Selection Section: Celestial Theme Tags -->
+<div class="flex flex-col space-y-2.5 pt-1">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-title-lg text-[17px] text-[#281900] font-semibold flex items-center gap-2 font-['Literata']">
+<span class="material-symbols-outlined text-primary text-[19px]" style="font-variation-settings: 'FILL' 1;">sparkles</span>
+            오늘 나의 마음 빛깔
+          </h2>
+<span class="font-label-sm text-label-sm text-outline font-medium">1개 선택</span>
+</div>
+<div class="flex flex-wrap gap-2" id="mood-selector">
+<!-- Active Chip (Warm Gold Highlight) -->
+<button class="mood-chip active flex items-center gap-2 px-3.5 py-2 rounded-full border border-primary-container/80 bg-[#FFF7E8] text-[#5E4000] font-label-lg text-label-lg shadow-[0_2px_12px_rgba(229,169,60,0.22)] transition-all" type="button">
+<span class="text-base">🌙</span>
+<span class="font-semibold">포근한 힐링</span>
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="mood-chip flex items-center gap-2 px-3.5 py-2 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-label-lg text-label-lg hover:border-primary-container/60 hover:bg-[#FAF4E8] transition-all" type="button">
+<span class="text-base">🍯</span>
+<span>달콤한 뿌듯함</span>
+</button>
+<button class="mood-chip flex items-center gap-2 px-3.5 py-2 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-label-lg text-label-lg hover:border-primary-container/60 hover:bg-[#FAF4E8] transition-all" type="button">
+<span class="text-base">☕</span>
+<span>조용한 사색</span>
+</button>
+<button class="mood-chip flex items-center gap-2 px-3.5 py-2 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-label-lg text-label-lg hover:border-primary-container/60 hover:bg-[#FAF4E8] transition-all" type="button">
+<span class="text-base">🌧️</span>
+<span>토닥토닥 지침</span>
+</button>
+<button class="mood-chip flex items-center gap-2 px-3.5 py-2 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-label-lg text-label-lg hover:border-primary-container/60 hover:bg-[#FAF4E8] transition-all" type="button">
+<span class="text-base">💫</span>
+<span>반짝이는 설렘</span>
+</button>
+</div>
+</div>
+<!-- Activity & Daily Story Ingredient Badges -->
+<div class="flex flex-col space-y-3.5 rounded-xl bg-[#FAF4E8] parchment-border p-4">
+<div class="flex items-center justify-between pb-1 border-b border-[#E7E2D9]">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_fix_normal</span>
+<h2 class="font-title-lg text-[17px] text-[#281900] font-semibold font-['Literata']">오늘 무슨 일이 있었나요?</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-[#EDE7DE] text-secondary font-semibold">동화 조각 선택</span>
+</div>
+<!-- Ingredient Category 1: Routine & Rest -->
+<div class="flex flex-col space-y-2">
+<div class="flex items-center gap-1.5 px-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-md text-label-md text-primary font-semibold">따스한 휴식과 온기</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<button class="tag-chip active flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary-container/70 bg-[#FFF7E8] text-[#5E4000] font-body-sm text-[13px] font-medium shadow-sm transition-all" type="button">
+<span>☕ 따뜻한 차 한 잔</span>
+<span class="material-symbols-outlined text-[13px] text-primary">check</span>
+</button>
+<button class="tag-chip active flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary-container/70 bg-[#FFF7E8] text-[#5E4000] font-body-sm text-[13px] font-medium shadow-sm transition-all" type="button">
+<span>📚 골목 서점과 시집</span>
+<span class="material-symbols-outlined text-[13px] text-primary">check</span>
+</button>
+<button class="tag-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-body-sm text-[13px] hover:border-primary-container/60 hover:bg-[#FFF7E8] transition-colors" type="button">
+<span>🐾 밤안개 산책</span>
+</button>
+<button class="tag-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-body-sm text-[13px] hover:border-primary-container/60 hover:bg-[#FFF7E8] transition-colors" type="button">
+<span>🍲 포근하고 든든한 식사</span>
+</button>
+<button class="tag-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-body-sm text-[13px] hover:border-primary-container/60 hover:bg-[#FFF7E8] transition-colors" type="button">
+<span>🛏️ 나른한 낮잠</span>
+</button>
+</div>
+</div>
+<!-- Ingredient Category 2: Social & Tasks -->
+<div class="flex flex-col space-y-2 pt-1">
+<div class="flex items-center gap-1.5 px-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-secondary font-semibold">인연과 보람찬 시간</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<button class="tag-chip active flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#D6C7FD] bg-[#F7F3FF] text-[#4B406D] font-body-sm text-[13px] font-medium shadow-sm transition-all" type="button">
+<span>💬 친구와의 담소</span>
+<span class="material-symbols-outlined text-[13px] text-secondary">check</span>
+</button>
+<button class="tag-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-body-sm text-[13px] hover:border-secondary/40 hover:bg-[#F7F3FF] transition-colors" type="button">
+<span>💻 알차게 마친 오늘의 일</span>
+</button>
+<button class="tag-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-body-sm text-[13px] hover:border-secondary/40 hover:bg-[#F7F3FF] transition-colors" type="button">
+<span>🌟 마음에 남은 칭찬</span>
+</button>
+<button class="tag-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-body-sm text-[13px] hover:border-secondary/40 hover:bg-[#F7F3FF] transition-colors" type="button">
+<span>🎧 귓가의 비밀 음악</span>
+</button>
+</div>
+</div>
+<!-- Ingredient Category 3: Weather & Space -->
+<div class="flex flex-col space-y-2 pt-1">
+<div class="flex items-center gap-1.5 px-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md text-tertiary font-semibold">별과 바람의 풍경</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<button class="tag-chip active flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary-container/70 bg-[#FFF7E8] text-[#5E4000] font-body-sm text-[13px] font-medium shadow-sm transition-all" type="button">
+<span>🌌 밤하늘 별보기</span>
+<span class="material-symbols-outlined text-[13px] text-primary">check</span>
+</button>
+<button class="tag-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-body-sm text-[13px] hover:border-primary-container/60 hover:bg-[#FFF7E8] transition-colors" type="button">
+<span>🍃 선선한 창가 바람</span>
+</button>
+<button class="tag-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-body-sm text-[13px] hover:border-primary-container/60 hover:bg-[#FFF7E8] transition-colors" type="button">
+<span>☔ 다정한 빗소리</span>
+</button>
+<button class="tag-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#D4C4B0]/60 bg-surface-container-lowest text-on-surface-variant font-body-sm text-[13px] hover:border-primary-container/60 hover:bg-[#FFF7E8] transition-colors" type="button">
+<span>🛋️ 포근한 나의 성채</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Margin Notes / Grimoire Margin Memo -->
+<div class="flex flex-col space-y-2">
+<div class="flex items-center justify-between px-1">
+<label class="font-title-lg text-[16px] text-[#281900] font-semibold flex items-center gap-2 font-['Literata']" for="memo-input">
+<span class="material-symbols-outlined text-primary text-[19px]">edit_note</span>
+            일기장 여백에 남기는 짧은 메모
+          </label>
+<span class="font-label-sm text-label-sm text-outline">선택사항</span>
+</div>
+<div class="relative rounded-xl border border-[#D4C4B0] bg-[#FAF6EE] p-3.5 shadow-inner focus-within:border-primary-container focus-within:bg-[#FFFDF9] transition-all">
+<div class="absolute top-3 right-3 text-secondary/30 pointer-events-none">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+</div>
+<textarea class="w-full bg-transparent resize-none outline-none text-[#281900] font-['Literata'] text-[14px] leading-relaxed placeholder:text-outline/70 border-0 p-0 focus:ring-0" id="memo-input" placeholder="퇴근길에 들른 작은 서점에서 따스한 바닐라 티를 마셨어. 오늘 밤하늘에 별이 참 밝더라..." rows="3">퇴근길에 들른 작은 서점에서 따스한 바닐라 티를 마셨어. 오늘 밤하늘에 별이 참 밝더라.</textarea>
+<div class="flex items-center justify-between pt-2 border-t border-[#E7E2D9]/80 mt-1">
+<div class="flex items-center gap-1 text-primary text-[12px]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">키워드 조각만으로도 예쁜 동화가 지어져요</span>
+</div>
+<span class="font-label-sm text-[11px] text-outline">48 / 150</span>
+</div>
+</div>
+</div>
+<!-- AI Story Preview Pod: Dragon Companion -->
+<div class="relative rounded-xl border border-[#E5A93C]/40 bg-gradient-to-r from-[#FFF7EA] via-[#FAF4E8] to-[#F5EDFC] p-3.5 shadow-sm flex items-start gap-3">
+<div class="relative w-10 h-10 rounded-full bg-secondary-container/80 border border-secondary/30 flex-shrink-0 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]" style="font-variation-settings: 'FILL' 1;">temp_preferences_custom</span>
+</div>
+<div class="flex flex-col space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-[14px] text-primary font-bold font-['Literata']">아기 용 별지기의 속삭임</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+</div>
+<p class="font-body-sm text-[12.5px] text-[#403628] leading-relaxed">
+            고른 4가지 빛깔로 <span class="text-primary font-semibold underline decoration-primary-container/80 underline-offset-2">"서점과 따스한 차, 밤하늘의 별빛"</span>이 담긴 포근한 수채화 동화 장면을 그릴 준비가 되었어요.
+          </p>
+</div>
+</div>
+<!-- Visual Cozy Grimoire Placeholder Accent -->
+<div class="relative w-full h-24 rounded-xl overflow-hidden border border-[#D4C4B0]/60 shadow-sm flex items-center justify-center">
+<div class="absolute inset-0 bg-cover bg-center opacity-65 filter contrast-105" data-alt="Soft dreamy dark fairytale bedside illustration featuring a glowing sleeping dragon curled around a magical glowing teacup and open starry grimoire, gentle deep indigo and warm amber lighting, cozy velvet atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGnv-jBkwlfCFs9xYd_GtTW1xCDN1R3bpL64E35NY_x8nf9607hpC7GCgbs0-2Yiwyo-ZK2rlsk9GYa3n8n-MDwheCRzuLn7BQ5NYi8gg0vsk1_Zug94fhu8md0sDN7WCnXZsnOtlZufRkQ3_0sYwi-MS64HHdJzD_6MDjEfWcN4TxrcoLKgQAgU7YOE1yuJhxTbbR304Xhx8y9mqPk05N_fu8YAzCrGjHcTYjfg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#FFF9EF]/90 via-[#FAF4E8]/60 to-transparent"></div>
+<div class="relative z-10 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/95 border border-[#E5A93C]/50 backdrop-blur-md text-[#5E4000] font-label-sm text-[12px] font-semibold shadow-sm">
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">palette</span>
+<span>따스한 수채화 동화 삽화 자동 생성</span>
+</div>
+</div>
+<!-- Bottom Primary Actions -->
+<div class="flex flex-col space-y-2.5 pt-1">
+<!-- Primary Button: Radiant Starlight Gold -->
+<button class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-[#E5A93C] via-[#EDB654] to-[#E5A93C] text-[#281900] font-headline-md text-[17px] font-bold amber-glow active:scale-[0.98] transition-transform flex items-center justify-center gap-2 border border-[#FFDE99]" type="button">
+<span class="material-symbols-outlined text-[22px] text-[#281900]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-['Literata'] tracking-wide">오늘의 동화 장면 빚기</span>
+</button>
+<!-- Secondary Alternatives -->
+<div class="flex items-center justify-between px-2 pt-0.5">
+<button class="text-secondary font-label-md text-label-md hover:text-[#4B406D] flex items-center gap-1.5 py-1 font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">history_edu</span>
+<span>자유 긴 글 모드로 쓰기</span>
+</button>
+<button class="text-outline hover:text-on-surface font-label-md text-label-md flex items-center gap-1 py-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">bookmark_border</span>
+<span>임시 보관</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<script>
+    (function() {
+      // Mood Chip Toggle Interaction
+      const moodChips = document.querySelectorAll('.mood-chip');
+      moodChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          moodChips.forEach(c => {
+            c.classList.remove('active', 'border-primary-container/80', 'bg-[#FFF7E8]', 'text-[#5E4000]', 'shadow-[0_2px_12px_rgba(229,169,60,0.22)]');
+            c.classList.add('border-[#D4C4B0]/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+            const star = c.querySelector('.material-symbols-outlined');
+            if (star) star.remove();
+          });
+          chip.classList.remove('border-[#D4C4B0]/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+          chip.classList.add('active', 'border-primary-container/80', 'bg-[#FFF7E8]', 'text-[#5E4000]', 'shadow-[0_2px_12px_rgba(229,169,60,0.22)]');
+          const star = document.createElement('span');
+          star.className = 'material-symbols-outlined text-[15px] text-primary';
+          star.style.fontVariationSettings = "'FILL' 1";
+          star.innerText = 'star';
+          chip.appendChild(star);
+        });
+      });
+
+      // Tag Chips Toggle Interaction
+      const tagChips = document.querySelectorAll('.tag-chip');
+      tagChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          const isSelected = chip.classList.contains('active');
+          if (isSelected) {
+            chip.classList.remove('active', 'border-primary-container/70', 'border-[#D6C7FD]', 'bg-[#FFF7E8]', 'bg-[#F7F3FF]', 'text-[#5E4000]', 'text-[#4B406D]', 'shadow-sm');
+            chip.classList.add('border-[#D4C4B0]/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+            const check = chip.querySelector('.material-symbols-outlined');
+            if (check) check.remove();
+          } else {
+            chip.classList.add('active', 'border-primary-container/70', 'bg-[#FFF7E8]', 'text-[#5E4000]', 'shadow-sm');
+            chip.classList.remove('border-[#D4C4B0]/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+            const check = document.createElement('span');
+            check.className = 'material-symbols-outlined text-[13px] text-primary';
+            check.innerText = 'check';
+            chip.appendChild(check);
+          }
+        });
+      });
+    })();
+  </script>
+</body></html>
